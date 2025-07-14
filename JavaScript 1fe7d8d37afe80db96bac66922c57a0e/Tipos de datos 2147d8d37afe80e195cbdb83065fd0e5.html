@@ -1,0 +1,698 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tipos de datos</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2147d8d3-7afe-80e1-95cb-db83065fd0e5" class="page sans"><header><h1 class="page-title">Tipos de datos</h1><p class="page-description"></p></header><div class="page-body"><h1 id="2167d8d3-7afe-80fc-838a-cf3afaeac472" class="">Primitivos</h1><h2 id="2147d8d3-7afe-80ee-a4b5-cafefb0b8a1e" class="">number</h2><p id="2147d8d3-7afe-8015-9350-d6a1b45553a8" class="">Para declarar datos enteros o decimales JS los toma como number (se usa el punto para diferencia entre la parte entera y la parte decimal).</p><p id="2147d8d3-7afe-80ea-8240-e77d12a712c3" class=""><div class="indented"><p id="2147d8d3-7afe-8096-9f40-cfde3ea34397" class=""><strong>infinity → </strong>Representa numeros infinitos, se utiliza para representar un numero mayor  que cualquier otro numero  representable en el sistema.</p><p id="2147d8d3-7afe-80d5-aceb-f0016854e8c5" class="">
+</p><p id="2147d8d3-7afe-8026-abda-e13ec2cc1d07" class=""><strong>NaN → </strong>Aparece cuando un operacion no produce un resultado numerico</p><p id="2147d8d3-7afe-8008-bdf7-e7ccbecd2bee" class="">
+</p><p id="2147d8d3-7afe-80a6-9c87-e48b517edd2a" class=""><strong>BigInt → </strong>Lo utilizamos para representar numeros grandes que escapan de la zona segura. La syntaxis para decif un numero va a ser bigInt es poniendole una <em>n </em>al final.</p><figure id="2147d8d3-7afe-8011-a45a-c9a23981eefc" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image.png"><img style="width:524px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image.png"/></a></figure><p id="2147d8d3-7afe-8031-a1e1-c32ff71b52aa" class="">Tener en cuenta que bigInt solo funciona con numeros enteros </p></div></p><h2 id="2147d8d3-7afe-801e-a15c-eed0df161e14" class="">string</h2><p id="2147d8d3-7afe-8051-8105-c83a589949d7" class="">Se le conoce como cadena de caracteres a una variable que guarda texto. En JS definimos una variable de tipo texto usando las comillas </p><figure id="2147d8d3-7afe-800a-a71d-c372e76f03f2" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%201.png"><img style="width:432px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%201.png"/></a></figure><p id="2147d8d3-7afe-8018-9a9d-e2d4269164bc" class=""><div class="indented"><p id="2147d8d3-7afe-8039-9d8d-debb05e58066" class=""><strong>escape sequences</strong></p><figure id="2147d8d3-7afe-801d-ae24-cd82ecd089e9" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%202.png"><img style="width:624px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%202.png"/></a></figure><p id="2147d8d3-7afe-809b-ac20-d73e00c12aff" class="">
+</p><h3 id="2147d8d3-7afe-805b-b436-cd5670c59688" class="">template strings</h3><p id="2147d8d3-7afe-8040-b147-c6bc23082f8e" class="">Con las comillas invertidas podemos hacer cadenas dinamicas insertando directamente variables sin tener que concatenar manualmente.</p><figure id="2147d8d3-7afe-80a2-9ce9-d504db03c86a" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%203.png"><img style="width:336px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%203.png"/></a></figure></div></p><h2 id="2147d8d3-7afe-8013-bbb9-deb6ab40471b" class="">boolean</h2><p id="2147d8d3-7afe-80ab-ba84-c1b0395b2e0d" class="">Este tipo de dato solo acepta dos valores verdadero (true) o falso (false).</p><figure id="2147d8d3-7afe-80d1-9bed-de4d513a07eb" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%204.png"><img style="width:384px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%204.png"/></a></figure><p id="2147d8d3-7afe-80d6-9bc0-dcbc4ce0bd1a" class="">
+</p><h2 id="2147d8d3-7afe-8068-b26b-c260194ca102" class="">undefined</h2><p id="2147d8d3-7afe-80ae-b302-e2ff20cc6742" class="">Este tipo de dato devuelve <code>undefined</code> cuando una variable fue declarada pero inicializada.</p><figure id="2147d8d3-7afe-8011-8c0d-d1388687ee4a" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%205.png"><img style="width:192px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%205.png"/></a></figure><p id="2147d8d3-7afe-80fe-a374-eb18d8657642" class="">
+</p><h2 id="2147d8d3-7afe-8090-b51c-de2ffcf4aa6f" class="">null</h2><p id="2147d8d3-7afe-8031-9a55-c7919924dc4a" class="">Es la forma de representar que una variable fue inicializada con un valor vacio.</p><figure id="2147d8d3-7afe-80c7-9c6d-d0c0c0faf60b" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%206.png"><img style="width:192px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%206.png"/></a></figure><p id="2147d8d3-7afe-8003-a59d-e502afd2d706" class="">
+</p><h3 id="2147d8d3-7afe-80ea-ad23-d949e440d6c9" class="">Symbol</h3><p id="2147d8d3-7afe-80af-8ac9-e5c0623d9563" class="">Lo utilizamos para representar identificadores unicos e inmutables. Se utiliza para crear propiedades de objetos que no pueden ser accedidas o modificadas por otros codigos.</p><figure id="2147d8d3-7afe-8038-b157-c991fe8aa5d5" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%207.png"><img style="width:336px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%207.png"/></a></figure><p id="2167d8d3-7afe-80b6-b28b-e3bcbb847ad0" class="">
+</p><h3 id="2147d8d3-7afe-804a-885b-e7beeb1bfed3" class="">bigInt</h3><p id="2167d8d3-7afe-8024-91c3-fcfa8107e70b" class="">Almacena un numero grande</p><p id="21a7d8d3-7afe-804c-9a1a-d505fb8399ed" class="">
+</p><figure id="21a7d8d3-7afe-80a9-bc2a-d5c7a3f1c362" class="block-color-red link-to-page"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/Metodos%20para%20tipos%20de%20datos%20primitivos%2021a7d8d37afe80a9bc2ad5c7a3f1c362.html">Metodos para tipos de datos primitivos</a></figure><p id="21a7d8d3-7afe-80a9-814e-d75897e70063" class="">
+</p><h1 id="2167d8d3-7afe-806b-b335-e3ec8cc4e6d1" class="">Datos complejos</h1><p id="2167d8d3-7afe-80af-a6aa-d1abc4c4d3fb" class="">
+</p><p id="2147d8d3-7afe-80d4-bc96-e7453a7c2d82" class="">En JS las estructuras de datos son fundamentales para organizar y almacenar informacion, las mas usadas son las arrays y los objetos.</p><h2 id="2147d8d3-7afe-80b8-ac99-d11e4c5fb1b8" class="">arrays - listas- vectores</h2><p id="21a7d8d3-7afe-8032-95c4-ef8dbf2ffeb1" class="">Son una lista ordenada de datos.</p><p id="2147d8d3-7afe-8096-8bda-f43d918820d6" class=""><code>const example = [&quot;value1&quot;, &quot;value2&quot;]</code> </p><h3 id="2147d8d3-7afe-800b-9e4a-dceda69c256f" class="">Metodos para los arrays</h3><figure id="21a7d8d3-7afe-8096-b77d-caa8656f31e8" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%208.png"><img style="width:709.9791870117188px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%208.png"/></a></figure><p id="21a7d8d3-7afe-80dd-add6-ced4861e9770" class="">findLast → Devuelve el ultimo elemento de una lista que cumpla con una condicion.<div class="indented"><p id="21a7d8d3-7afe-801b-953a-e8818460bf38" class="">toReversed → Crea una lista en orden inverso con los elementos de otra lista.</p></div></p><h2 id="2147d8d3-7afe-80ba-afcc-cf843bd19fb3" class="">Objetos</h2><p id="21a7d8d3-7afe-804d-b96e-c4e70465cba7" class="">Los objetos son colecciones de pares (clave:valor).</p><p id="2147d8d3-7afe-8043-a9c0-d7b67318ca29" class=""><code>const object = {</code></p><p id="2147d8d3-7afe-8048-b866-f776e84625c5" class=""><code>“property1” = “value”,</code></p><p id="2147d8d3-7afe-80d1-986b-fb93509af5c4" class=""><code>&quot;property2&quot; = &quot;value2&quot;</code></p><p id="2147d8d3-7afe-8042-ba70-deca2ecdd630" class=""><code>}</code> </p><h3 id="21a7d8d3-7afe-80db-b9f2-efdeee35bfa6" class="">Metodos para objetos</h3><figure id="21a7d8d3-7afe-80e7-a830-d2ac51085a90" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%209.png"><img style="width:709.9791870117188px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%209.png"/></a></figure><p id="21a7d8d3-7afe-80be-8ee6-d8d524fe50f6" class="">
+</p><p id="21a7d8d3-7afe-8088-8c4d-e9861075fe5c" class="">
+</p><h2 id="21a7d8d3-7afe-80c8-90c2-e3be939b2655" class="">Sets</h2><p id="21a7d8d3-7afe-806d-835e-fa0889edc51c" class="">Son conjuntos de datos de valores unicos, esto es un tipo de dato especial de JS.</p><figure id="21a7d8d3-7afe-804e-8e9d-d1c6c015fbe7" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2010.png"><img style="width:288px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2010.png"/></a></figure><p id="21a7d8d3-7afe-8075-bc60-fd7a37ca7e84" class="">
+</p><h3 id="21a7d8d3-7afe-804f-b2d4-d255c2e5f272" class="">Metodos para los sets</h3><figure id="21a7d8d3-7afe-8015-bc0a-fac53591885c" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2011.png"><img style="width:659px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2011.png"/></a></figure><p id="21a7d8d3-7afe-80be-a1f5-cb59833dce66" class="">
+</p><h2 id="21a7d8d3-7afe-80b0-8624-d9b85ad27d35" class="">Maps</h2><p id="21a7d8d3-7afe-80dd-ae74-f0b949338913" class="">Los maps es una objeto especial que nos permite tener como clave cualquier tipo de dato.</p><figure id="21a7d8d3-7afe-803b-b387-e869c67411ab" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2012.png"><img style="width:537px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2012.png"/></a></figure><p id="21a7d8d3-7afe-8066-85f2-c6cff476e824" class="">
+</p><h3 id="21a7d8d3-7afe-80b7-9391-cae8c7d6e065" class=""><strong>Metodos para maps</strong></h3><figure id="21a7d8d3-7afe-807e-ad3a-deacc2e94192" class="image" style="text-align:left"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2013.png"><img style="width:578px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2013.png"/></a></figure><p id="21a7d8d3-7afe-8049-a3d8-ce742462ac3a" class=""><div class="indented"><ul id="21a7d8d3-7afe-8094-a4c3-e72b427c2d98" class="toggle"><li><details open=""><summary>Visualizacion avanzada de datos</summary><figure id="21a7d8d3-7afe-8090-a1b8-edcb59b93848" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2014.png"><img style="width:528px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2014.png"/></a></figure></details></li></ul></div></p><h1 id="21a7d8d3-7afe-8022-88af-de07edc5e6f1" class="">Identificacion de tipos de variables con typeof</h1><figure id="21a7d8d3-7afe-800e-9458-f290283f601d" class="image"><a href="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2015.png"><img style="width:696px" src="Tipos%20de%20datos%202147d8d37afe80e195cbdb83065fd0e5/image%2015.png"/></a></figure><p id="21a7d8d3-7afe-8033-b14b-ec322b178d24" class="">
+</p><p id="21a7d8d3-7afe-8083-a2a8-fa6e3ac33b51" class="">Si la null es la ausencia de un valor, ¿por qué typeof null devuelve object?</p><ul id="21a7d8d3-7afe-80d6-a2d4-ea3020a6962f" class="bulleted-list"><li style="list-style-type:disc">Es es un error de JavaScript directamente de JS.</li></ul><p id="21a7d8d3-7afe-808d-9121-e4d8ffb35651" class="">
+</p><p id="21a7d8d3-7afe-80b3-ae2f-debeeac84649" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
